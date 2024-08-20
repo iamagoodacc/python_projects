@@ -11,7 +11,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-API_KEY = os.getenv("API_KEY")
+GUILD_KEY = os.getenv("GUILD_KEY")
 CLIENT_KEY = os.getenv("CLIENT_KEY")
 
 client = commands.Bot(command_prefix = '.')
@@ -117,7 +117,7 @@ async def onready():
 async def on_message(message):
     global greetings, message_, author_, channelids
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f"to the quote: "))
-    id = client.get_guild(API_KEY)
+    id = client.get_guild(GUILD_KEY)
     greeting = random.choice(greetings)
     message_ = message
     author_ = str(message.author)
