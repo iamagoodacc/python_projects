@@ -11,7 +11,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-API_KEY = os.getenv('API_KEY')
+API_KEY = os.getenv("API_KEY")
+CLIENT_KEY = os.getenv("CLIENT_KEY")
 
 client = commands.Bot(command_prefix = '.')
 descrip = ''
@@ -245,17 +246,17 @@ async def runcode(ctx,*, content):
     channel = client.get_channel(829086658556461097)
     await channel.send(value)
     #await ctx.send(value)
-    
+
+#all of my scheduling stuff 
 #client.loop.create_task(school_alert())
 #client.loop.create_task(status())
-
 
 #print(strftime('%a, %d %b %Y %H:%M:%S', gmtime()))
 #if strftime('%H:%M:', gmtime()) == '17:59':
 #    print('ser')
 #else:
 #    print(strftime('%H:%M'))
-    
+
 #schedule.every(10).seconds.do(job)
 #schedule.every().day.at("10:30").do(job)
-client.run('NzYzMzQyODI3NjU2MTgzODE4.X32UaA.rFuOgmEVTp2D4gVA2d8CYOTbWTQ')
+client.run(CLIENT_KEY)
